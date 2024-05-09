@@ -65,7 +65,7 @@ export const createMesh = (pos=undefined, rot=undefined, isFrontBack=false, isMi
         clipBias: .003,
         textureWidth: 960 * window.devicePixelRatio,
         textureHeight: 680 * window.devicePixelRatio,
-        color: "#b1bbbb"
+        color: "#c1cbcb"
     }
 
     let obj = (isMirror) ? new Reflector(mirrorGeom, mirroParams) : new THREE.Mesh( surfaceGeom, defaultWallpaperMat );

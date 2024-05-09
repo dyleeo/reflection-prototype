@@ -63,7 +63,7 @@
 
         toggleMirror("left");
         toggleMirror("right");
-        // toggleMirror("back");
+        toggleMirror("back");
 
     }
 
