@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<style lang="scss">
+    section.home {
+        background-color: green;
+    }
+</style>
+
+
+<section class="home">
+    Hello!
+</section>
