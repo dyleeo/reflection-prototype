@@ -13,6 +13,7 @@ const config = {
 			$scss: path.resolve("./src/lib/scss"),
 			$utils: path.resolve("./src/lib/utils"),
 			$threeApp: path.resolve("./src/lib/ThreeApp"),
+			$stores: path.resolve("./src/lib/stores"),
 		}
 	}
 };

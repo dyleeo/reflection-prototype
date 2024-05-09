@@ -15,7 +15,6 @@
 
 <section class="reflection-page">
 
-
     <div class="reflection-app">
         <h1>Reflections</h1>
         <MirrorApp />
