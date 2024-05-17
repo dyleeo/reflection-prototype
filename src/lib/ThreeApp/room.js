@@ -1,8 +1,6 @@
 import { browser } from '$app/environment';
 import * as THREE from 'three';
 import { Reflector } from 'three/addons/objects/Reflector';
-import { WallsStore } from '$stores/ThreeAppStore';
-
 
 
 const room = new THREE.Group();
@@ -16,6 +14,7 @@ export const createRoom = () => {
     // ##############################
     // # walls & Floor/Ceil (6)
     // ##############################
+    
     // Room Diagram 
     // --- Back ---
     // |          |

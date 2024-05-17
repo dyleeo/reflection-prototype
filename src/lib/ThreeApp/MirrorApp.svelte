@@ -9,14 +9,6 @@
     //  CGTrader - Credit to: shkaf923149
     // (https://www.cgtrader.com/free-3d-print-models/miniatures/figurines/bear-low-poly-f7d1eeb7-d779-4fcf-ae9d-019dbd935964)
 
-
-        // $WallsStore = [...$WallsStore, {
-    //     name: Math.random()
-    // }]
-
-    // console.log($WallsStore);
-
-
     import { 
         createRoom, 
         createLights,
@@ -25,7 +17,7 @@
     let threeContainerEl;
     let scene, camera, renderer;
     let cube;
-    let stageWidth = 680, stageHeight = 680;
+    let stageWidth = 600, stageHeight = 600;
     const loader = new OBJLoader();
 
 
@@ -64,7 +56,6 @@
         toggleMirror("left");
         toggleMirror("right");
         toggleMirror("back");
-
     }
 
     
@@ -81,7 +72,7 @@
         cube = new THREE.Mesh( geometry, material );
         cube.position.y = 8;
         cube.position.x = 0;
-        cube.position.z = 0;
+        cube.position.z = -10;
         scene.add( cube );
     }
 
@@ -98,5 +89,11 @@
     }
     
 </script>
+
+<style lang="scss">
+    // .three-container {
+    //     border: 1px solid blue;
+    // }
+</style>
 
 <div class="three-container" bind:this={threeContainerEl}></div>
