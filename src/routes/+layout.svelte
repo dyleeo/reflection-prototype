@@ -1,5 +1,6 @@
 <script>
     import '$lib/scss/global.scss';
+    import Nav from "$components/Nav.svelte";
 </script>
 
 <svelte:head>
@@ -7,5 +8,6 @@
 </svelte:head>
 
 <main>
+    <Nav />
     <slot/>
 </main>

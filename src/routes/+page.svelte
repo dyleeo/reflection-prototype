@@ -4,7 +4,3 @@
     }
 </style>
 
-
-<section class="home">
-    Hello!
-</section>

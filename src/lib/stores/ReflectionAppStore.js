@@ -1,4 +1,5 @@
 import { writable } from "svelte/store";
 
 export const WallsStore = writable({});
-export const SceneStore = writable(undefined);
+export const SceneStore = writable({});
+

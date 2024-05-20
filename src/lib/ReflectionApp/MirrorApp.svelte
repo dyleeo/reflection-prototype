@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
     import * as THREE from 'three';
     import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
-    import { WallsStore } from '$stores/ThreeAppStore';
+    import { WallsStore, SceneStore } from '$stores/ReflectionAppStore';
     import { gsap } from 'gsap/dist/gsap';
 
     // Low polly bear Model 
@@ -12,7 +12,7 @@
     import { 
         createRoom, 
         createLights,
-    } from '$threeApp/room';
+    } from '$reflectionApp/room';
 
     let threeContainerEl;
     let scene, camera, renderer;
@@ -20,15 +20,12 @@
     let stageWidth = 600, stageHeight = 600;
     const loader = new OBJLoader();
 
-
     onMount(() => {
         loadModel();
         initApp()
     });
 
-    async function loadModel() {
-        
-    }
+    async function loadModel() { }
 
     function initApp() {
         setupAppScene();
@@ -47,53 +44,38 @@
         renderer.setSize(stageWidth, stageHeight);
         threeContainerEl.appendChild(renderer.domElement);
 
+        // add lights
         createLights(scene);
 
+        // creat room walls and environment
         const room = createRoom();
-        scene.add( room.group );
+        scene.add(room.group);
         $WallsStore = room;
-
-        toggleMirror("left");
-        toggleMirror("right");
-        toggleMirror("back");
     }
 
-    
     const toggleMirror = (wall) => {
-        if($WallsStore.roomObj[wall].mirror.visible){
-            $WallsStore.roomObj[wall].mirror.visible = false;
-        } else{
-            $WallsStore.roomObj[wall].mirror.visible = true;
-        }
+        $WallsStore.roomObj[wall].mirror.visible = ($WallsStore.roomObj[wall].mirror.visible) ? false : true;
     }
+    
     function addCube(){
-        const geometry = new THREE.BoxGeometry( 10, 10, 10 );
+        const geometry = new THREE.BoxGeometry( 15, 15, 15 );
         const material = new THREE.MeshPhongMaterial( { color: 0x00ff00 } );
         cube = new THREE.Mesh( geometry, material );
-        cube.position.y = 8;
-        cube.position.x = 0;
-        cube.position.z = -10;
-        scene.add( cube );
+        cube.position.set(0, 20, -10); //z: -60 to 60, default -10
+        scene.add(cube);
+        $SceneStore.cube = cube;
     }
 
     function animate() {
         requestAnimationFrame( animate );
         renderer.render( scene, camera );
 
-        // if($WallsStore){
-        //     $WallsStore.group.rotation.y+=.01
-        // }
-
         cube.rotation.x += 0.01;
         cube.rotation.y += 0.01;
+        // $SceneStore.mirror.cube.rotation.x += 0.01;
+        // $SceneStore.mirror.cube.rotation.y += 0.01;
     }
     
 </script>
-
-<style lang="scss">
-    // .three-container {
-    //     border: 1px solid blue;
-    // }
-</style>
 
 <div class="three-container" bind:this={threeContainerEl}></div>

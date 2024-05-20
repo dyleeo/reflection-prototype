@@ -12,7 +12,7 @@ const config = {
 			$assets: path.resolve("./src/lib/assets"),
 			$scss: path.resolve("./src/lib/scss"),
 			$utils: path.resolve("./src/lib/utils"),
-			$threeApp: path.resolve("./src/lib/ThreeApp"),
+			$reflectionApp: path.resolve("./src/lib/reflectionApp"),
 			$stores: path.resolve("./src/lib/stores"),
 		}
 	}
