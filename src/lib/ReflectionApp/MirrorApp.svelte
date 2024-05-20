@@ -3,7 +3,6 @@
     import * as THREE from 'three';
     import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
     import { WallsStore, SceneStore } from '$stores/ReflectionAppStore';
-    import { gsap } from 'gsap/dist/gsap';
 
     // Low polly bear Model 
     //  CGTrader - Credit to: shkaf923149
