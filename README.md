@@ -7,5 +7,5 @@
 npm run dev
 ```
 
-## Developing
+## Note
 This project is using SvelteKit, ThreeJS, and TwoJS
