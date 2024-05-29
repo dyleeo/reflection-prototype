@@ -1,4 +1,4 @@
-# Brilliant - Reflection project
+# Reflection project
 
 ## Developing
  `npm install`, start a development server:
